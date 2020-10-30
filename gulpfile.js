@@ -30,8 +30,8 @@ function css (cb) {
 
 function js (cb) {
     return src(folder.src + 'js/*')
-            // .pipe(stripDebug())
-            // .pipe(uglify())
+            .pipe(stripDebug())
+            .pipe(uglify())
            .pipe(dest(folder.dist + 'js/'))
            .pipe(connent.reload())
 }
